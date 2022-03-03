@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+  <META name="generator" content="HTML Tidy for HTML5 for Linux version 5.6.0">
+  <TITLE></TITLE>
+</HEAD>
+<BODY>
+  <UL>
+    <LI>
+      <A href="AboutSBHtopics.htm" target="content">My Secret Box Help</A><BR>
+      <UL>
+        <LI>
+          <A href="gettingHelp.htm" target="content">Getting help</A><BR>
+        </LI>
+        <LI>
+          <A href="SBHgeneral.htm" target="content">General topics</A><BR>
+          <UL>
+            <LI>
+              <A href="purpose.htm" target="content">The purpose of your Secret Box</A><BR>
+              <UL>
+                <LI>
+                  <A href="importanceOfUnique.htm" target="content">Importance of unique passwords for every site</A><BR>
+                </LI>
+              </UL>
+            </LI>
+            <LI>
+              <A href="firstTimeUse.htm" target="content">First time use</A><BR>
+              <UL>
+                <LI>
+                  <A href="secretsDB.htm" target="content">The secrets database</A><BR>
+                </LI>
+                <LI>
+                  <A href="masterPW.htm" target="content">The master password</A><BR>
+                </LI>
+                <LI>
+                  <A href="goodMasterPW.htm" target="content">How to choose a good master password</A><BR>
+                </LI>
+              </UL>
+            </LI>
+            <LI>
+              <A href="savingAsecret.htm" target="content">Saving a secret</A><BR>
+              <UL>
+                <LI>
+                  <A href="simpleSecretsSave.htm" target="content">Simple secrets</A><BR>
+                </LI>
+                <LI>
+                  <A href="complexSecretsSave.htm" target="content">Complex secrets</A><BR>
+                  <UL>
+                    <LI>
+                      <A href="auxPW.htm" target="content">Adding auxiliary secrets</A><BR>
+                    </LI>
+                    <LI>
+                      <A href="archiving.htm" target="content">Archiving secrets</A><BR>
+                    </LI>
+                    <LI>
+                      <A href="genRandomPW.htm" target="content">Generating random passwords</A><BR>
+                      <UL>
+                        <LI>
+                          <A href="safetyOfRandom.htm" target="content">Safety of random passwords</A><BR>
+                        </LI>
+                      </UL>
+                    </LI>
+                    <LI>
+                      <A href="testingPWedits.htm" target="content">Testing passwords from the edit window</A><BR>
+                    </LI>
+                  </UL>
+                </LI>
+              </UL>
+            </LI>
+            <LI>
+              <A href="findingSecrets.htm" target="content">Finding a secret</A><BR>
+              <UL>
+                <LI>
+                  <A href="usingListBox.htm" target="content">Using the list</A><BR>
+                </LI>
+                <LI>
+                  <A href="usingSearchBox.htm" target="content">Using the search box</A><BR>
+                </LI>
+              </UL>
+            </LI>
+            <LI>
+              <A href="usingAsecret.htm" target="content">Using a secret</A><BR>
+              <UL>
+                <LI>
+                  <A href="problemWebSites.htm" target="content">Problem web sites</A><BR>
+                </LI>
+              </UL>
+            </LI>
+            <LI>
+              <A href="changingAsecret.htm" target="content">Changing secret data</A><BR>
+              <UL>
+                <LI>
+                  <A href="complexSecretsChange.htm" target="content">Complex secrets</A><BR>
+                </LI>
+                <LI>
+                  <A href="renamingAsecret.htm" target="content">Renaming a secret</A><BR>
+                </LI>
+              </UL>
+            </LI>
+            <LI>
+              <A href="deletingAsecret.htm" target="content">Deleting a secret</A><BR>
+              <UL>
+                <LI>
+                  <A href="undeletingAsecret.htm" target="content">Un-deleting a secret</A><BR>
+                </LI>
+              </UL>
+            </LI>
+            <LI>
+              <A href="chaningMasterPW.htm" target="content">Changing the master password</A><BR>
+            </LI>
+            <LI>
+              <A href="backingUpSecrets.htm" target="content">Backing up secrets</A><BR>
+              <UL>
+                <LI>
+                  <A href="manualBackups.html" target="content">Manual backup</A><BR>
+                </LI>
+                <LI>
+                  <A href="localBackups.htm" target="content">Local backups</A><BR>
+                </LI>
+                <LI>
+                  <A href="remoteBackups.htm" target="content">Remote backups</A><BR>
+                  <UL>
+                    <LI>
+                      <A href="remoteServerTypes.htm" target="content">Remote Server Types</A><BR>
+                    </LI>
+                    <LI>
+                      <A href="remoteServerChoice.htm" target="content">Choosing a Remote Backup Server</A><BR>
+                    </LI>
+                  </UL>
+                </LI>
+              </UL>
+            </LI>
+          </UL>
+        </LI>
+        <LI>
+          <A href="searchFunction.htm" target="content">Search functionality</A><BR>
+          <UL>
+            <LI>
+              <A href="simpleSearch.htm" target="content">Simple searches</A><BR>
+            </LI>
+            <LI>
+              <A href="complexSearch.htm" target="content">Complex searches</A><BR>
+            </LI>
+            <LI>
+              <A href="regex.html" target="content">Regex documentation</A><BR>
+            </LI>
+          </UL>
+        </LI>
+        <LI>
+          <A href="settings.htm" target="content">Settings</A><BR>
+          <UL>
+            <LI>
+              <A href="globalSettings.htm" target="content">Global settings</A><BR>
+            </LI>
+            <LI>
+              <A href="databaseSettings.htm" target="content">Database settings</A><BR>
+            </LI>
+            <LI>
+              <A href="remoteSettings.htm" target="content">Remote settings</A><BR>
+            </LI>
+          </UL>
+        </LI>
+        <LI>
+          <A href="TechDetails.htm" target="content">Technical details and specifications</A><BR>
+          <UL>
+            <LI>
+              <A href="availableVersions.htm" target="content">Available versions</A><BR>
+            </LI>
+            <LI>
+              <A href="commandLineArgs.htm" target="content">Command line parameters</A><BR>
+            </LI>
+            <LI>
+              <A href="encryptionDetails.htm" target="content">Encryption details</A><BR>
+            </LI>
+            <LI>
+              <A href="fileFormats.htm" target="content">File formats</A><BR>
+              <UL>
+                <LI>
+                  <A href="settingsfileformat.htm" target="content">Settings File Format</A><BR>
+                </LI>
+                <LI>
+                  <A href="secretsfileformat.htm" target="content">Secrets File Format</A><BR>
+                </LI>
+              </UL>
+            </LI>
+            <LI>
+              <A href="clipboardUse.htm" target="content">Clipboard use</A><BR>
+            </LI>
+            <LI>
+              <A href="memoryUse.htm" target="content">Memory use</A><BR>
+            </LI>
+            <LI>
+              <A href="usingTextMode.htm" target="content">Using text mode</A><BR>
+              <UL>
+                <LI>
+                  <A href="tutorOverview.htm" target="content">Tutor overview</A><BR>
+                </LI>
+                <LI>
+                  <A href="tutorDefinitions.htm" target="content">Definitions</A><BR>
+                </LI>
+                <LI>
+                  <A href="displayPointLayout.htm" target="content">Display Point layout</A><BR>
+                </LI>
+                <LI>
+                  <A href="typeAhead.htm" target="content">Type ahead</A><BR>
+                </LI>
+                <LI>
+                  <A href="menusTutor.htm" target="content">Menus</A><BR>
+                </LI>
+                <LI>
+                  <A href="textInput.htm" target="content">Text input</A><BR>
+                </LI>
+                <LI>
+                  <A href="listInput.htm" target="content">List input</A><BR>
+                  <UL>
+                    <LI>
+                      <A href="singleMode.htm" target="content">Single mode</A><BR>
+                    </LI>
+                    <LI>
+                      <A href="recursiveMode.htm" target="content">Recursive mode</A><BR>
+                    </LI>
+                  </UL>
+                </LI>
+                <LI>
+                  <A href="alternateInputFile.htm" target="content">Alternate input file</A><BR>
+                </LI>
+                <LI>
+                  <A href="alternateOutputFile.htm" target="content">Alternate output file</A><BR>
+                </LI>
+              </UL>
+            </LI>
+          </UL>
+        </LI>
+        <LI>
+          <A href="troubleshooting.htm" target="content">Troubleshooting</A><BR>
+          <UL>
+            <LI>
+              <A href="displayingVersionInfo.htm" target="content">Displaying version information</A><BR>
+            </LI>
+            <LI>
+              <A href="displayingFileInfo.htm" target="content">Displaying file information</A><BR>
+            </LI>
+            <LI>
+              <A href="displayingLastChangeDate.htm" target="content">Displaying last change date of a secret</A><BR>
+            </LI>
+            <LI>
+              <A href="recoveringFromAcrash.htm" target="content">Recovering from a crash</A><BR>
+            </LI>
+            <LI>
+              <A href="restorinmgFromBackups.htm" target="content">Restoring from a backup file</A><BR>
+            </LI>
+            <LI>
+              <A href="usingAdebugVersion.htm" target="content">Using a debug version</A><BR>
+            </LI>
+          </UL>
+        </LI>
+      </UL>
+    </LI>
+    <LI>
+      <A href="htmlhelponhelp/main.htm" target="content">Help Viewer</A><BR>
+      <UL>
+        <LI>
+          <A href="htmlhelponhelp/general.htm" target="content">The Help Viewer</A><BR>
+          <UL>
+            <LI>
+              <A href="htmlhelponhelp/overview.htm" target="content">Using The Help Viewer</A><BR>
+            </LI>
+            <LI>
+              <A href="htmlhelponhelp/more.htm" target="content">Get more out of help</A><BR>
+            </LI>
+            <LI>
+              <A href="htmlhelponhelp/topic.htm" target="content">Find a help topic</A><BR>
+            </LI>
+            <LI>
+              <A href="htmlhelponhelp/favs.htm" target="content">Create a list of favorite topics</A><BR>
+            </LI>
+            <LI>
+              <A href="htmlhelponhelp/copy.htm" target="content">Copy a help topic</A><BR>
+            </LI>
+            <LI>
+              <A href="htmlhelponhelp/print.htm" target="content">Print the current topic</A><BR>
+            </LI>
+            <LI>
+              <A href="htmlhelponhelp/db.htm" target="content">Get help in a dialog box</A><BR>
+            </LI>
+            <LI>
+              <A href="htmlhelponhelp/move.htm" target="content">Find topics using toolbar buttons</A><BR>
+            </LI>
+            <LI>
+              <A href="htmlhelponhelp/hide.htm" target="content">Hide or show the Navigation pane</A><BR>
+            </LI>
+            <LI>
+              <A href="htmlhelponhelp/accessibility.htm" target="content">Use accessibility shortcut keys</A><BR>
+            </LI>
+            <LI>
+              <A href="htmlhelponhelp/shortcut.htm" target="content">Use shortcut menu commands</A><BR>
+            </LI>
+          </UL>
+        </LI>
+        <LI>
+          <A href="htmlhelponhelp/ftsover.htm" target="content">Full-Text Search</A><BR>
+          <UL>
+            <LI>
+              <A href="htmlhelponhelp/fts_simple.htm" target="content">Use full-text search</A><BR>
+            </LI>
+            <LI>
+              <A href="htmlhelponhelp/highlt.htm" target="content">Highlight words in searched topics</A><BR>
+            </LI>
+            <LI>
+              <A href="htmlhelponhelp/advanced.htm" target="content">Advanced Full-Text Search</A><BR>
+              <UL>
+                <LI>
+                  <A href="htmlhelponhelp/basic.htm" target="content">Search for help topics</A><BR>
+                </LI>
+                <LI>
+                  <A href="htmlhelponhelp/fts.htm" target="content">Find information with advanced full-text search</A><BR>
+                </LI>
+                <LI>
+                  <A href="htmlhelponhelp/wild.htm" target="content">Search for words or phrases</A><BR>
+                </LI>
+                <LI>
+                  <A href="htmlhelponhelp/bool.htm" target="content">Define search terms</A><BR>
+                </LI>
+                <LI>
+                  <A href="htmlhelponhelp/nest.htm" target="content">Use nested expressions</A><BR>
+                </LI>
+                <LI>
+                  <A href="htmlhelponhelp/titles.htm" target="content">Search for words in the titles of HTML files</A><BR>
+                </LI>
+                <LI>
+                  <A href="htmlhelponhelp/similar.htm" target="content">Find words similar to your search term</A><BR>
+                </LI>
+                <LI>
+                  <A href="htmlhelponhelp/previous.htm" target="content">Search previous results</A><BR>
+                </LI>
+              </UL>
+            </LI>
+          </UL>
+        </LI>
+        <LI>
+          <A href="htmlhelponhelp/changes.htm" target="content">Changing the Help Viewer</A><BR>
+          <UL>
+            <LI>
+              <A href="htmlhelponhelp/window.htm" target="content">Customize the Help Viewer</A><BR>
+            </LI>
+            <LI>
+              <A href="htmlhelponhelp/disability.htm" target="content">Change formatting for accessibility</A><BR>
+            </LI>
+            <LI>
+              <A href="htmlhelponhelp/color.htm" target="content">Change colors in the Topic pane</A><BR>
+            </LI>
+          </UL>
+        </LI>
+      </UL>
+    </LI>
+  </UL>
+</BODY>
+</HTML>
