@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+	<sitemap>
+		<loc>http://www.kuras-sea.net/main.xml.gz</loc>
+		<lastmod>2022-02-27</lastmod>
+	</sitemap>
+	<sitemap>
+		<loc>http://www.kuras-sea.net/passwin.xml</loc>
+		<lastmod>2022-02-27</lastmod>
+	</sitemap>
+	<sitemap>
+		<loc>http://www.kuras-sea.net/passwinhelp.xml</loc>
+		<lastmod>2022-02-27</lastmod>
+	</sitemap>
+</sitemapindex>

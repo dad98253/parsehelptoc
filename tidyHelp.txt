@@ -1,0 +1,9 @@
+tidy -ic -asxml toc.html > tidytoc.html
+
+echo "2,tidytoc.html,helptoc.html" > swagmac.conf
+
+./parsehelptoc
+
+tidy -icu -w 150 -ashtml helptoc.html > helpIndex.html
+
+
