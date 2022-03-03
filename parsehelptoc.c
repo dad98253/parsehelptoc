@@ -234,6 +234,7 @@ char *defchangefreq = "monthly";
 char *defpriority = "0.5";
 char *urldirname[NUMSITE] = {NULL};
 char *sitemapfilename[NUMSITE] = {NULL};
+char *basefqdn = NULL;
 int numfilegen = 0;
 
 int main(int argc, char* argv[])
@@ -315,7 +316,14 @@ int main(int argc, char* argv[])
 //				line = (char*)malloc(size);
 //					urldb = (UrlDbStructure*)malloc(sizeof(UrlDbStructure)*NUMURL);
 //					sitedb = (SiteMapDbStructure*)malloc(sizeof(SiteMapDbStructure)*NUMSITE);
-
+					// save the basefqdn in case it is needed during the helpuri to sitemap step
+		    		if (!outfilename) {
+		    			basefqdn = (char*)malloc(1);
+		    			*basefqdn = '\000';
+		    		} else {
+		    			basefqdn = (char*)malloc(strlen(outfilename)+1);
+						strcpy (basefqdn, outfilename);
+		    		}
 					sitedoc = xmlParseFile(filename);
 					if (sitedoc == NULL ) {
 							fprintf(stderr,"sitemap document not parsed successfully. \nUnable to open old sitemap.xml file\n");
@@ -936,6 +944,7 @@ int parseSitemap (xmlDocPtr doc, xmlNodePtr cur, int *numnew, FILE *fp2)
 					if ( (sitedb+*numnew)->numurls < 0) {
 						fprintf(stderr,"!!!!!!    loadurldata failed on %s\n",(sitedb+*numnew)->unzipedfilename);
 					}
+					(sitedb+*numnew)->changed = changedflag;
 					xmlFreeDoc(urldoc);
 			}
 
@@ -1125,7 +1134,8 @@ int savehelpsdata(xmlDocPtr urldoc, int filegenIndex) {
 	//	cur = cur->xmlChildrenNode;
 		numsaved = 0;
 		int process = 0;
-		if ( numhelps ) {
+		char * tempstr = NULL;
+		if ( numhelps && servername != NULL) {
 			for (i = 0; i < numhelps; i++) {
 				process = 0;
 				if ( strlen(urldirname[filegenIndex]) == 0 && strchr((HelpSdb+i)->Local, '\\' ) == NULL ) {
@@ -1136,7 +1146,16 @@ int savehelpsdata(xmlDocPtr urldoc, int filegenIndex) {
 
 				if ( process ) {
 					node = xmlNewChild(root, NULL, BAD_CAST "url", NULL);
-					xmlNewChild(node, NULL, BAD_CAST "loc", BAD_CAST xmlStrdup( (xmlChar *)((HelpSdb+i)->Local) ));
+					if (basefqdn == NULL){
+						xmlNewChild(node, NULL, BAD_CAST "loc", BAD_CAST xmlStrdup( (xmlChar *)((HelpSdb+i)->Local) ));
+					} else {
+						tempstr = (char *)calloc(1,strlen(servername)+strlen(basefqdn)+strlen((HelpSdb+i)->Local)+1);
+						strcpy(tempstr,servername);
+						strcat(tempstr,basefqdn);
+						strcat(tempstr,(HelpSdb+i)->Local);
+						xmlNewChild(node, NULL, BAD_CAST "loc", BAD_CAST xmlStrdup( (xmlChar *)tempstr ));
+						free(tempstr);
+					}
 					TimeFromEpochMillis( 0, result, sizeof(result), &error);
 					if(error){
 						fprintf(stderr,"error coverting integer time stamp to iso-8601 in saveurldata\n");
@@ -1283,6 +1302,7 @@ int parseobject (xmlDocPtr doc, xmlNodePtr cur, int *numnew, FILE *fp2)
 	xmlChar* Name = NULL;
 	xmlChar* Local = NULL;
 	xmlChar* URL = NULL;
+	int i;
 
 	    if ((!xmlStrcmp(cur->name, (const xmlChar *)"object"))) {
 	    	sub = cur->xmlChildrenNode;
@@ -1290,7 +1310,14 @@ int parseobject (xmlDocPtr doc, xmlNodePtr cur, int *numnew, FILE *fp2)
 	    		if ((!xmlStrcmp(sub->name, (const xmlChar *)"param"))) {
 	    			if (!parseparam (doc, sub, numnew, fp2)) return(2);
 	    			if ((!xmlStrcmp(ParamS.name, (const xmlChar *)"Name"))) Name = xmlStrdup(ParamS.value);
-	    			if ((!xmlStrcmp(ParamS.name, (const xmlChar *)"Local"))) Local = xmlStrdup(ParamS.value);
+	    			if ((!xmlStrcmp(ParamS.name, (const xmlChar *)"Local"))) {
+	    				Local = xmlStrdup(ParamS.value);
+	    				for(i=0;i<strlen((char *)Local);i++) {
+	    					if((char)Local[i] == '\\') {
+	    						*((char *)(Local+i)) = '/';
+	    					}
+	    				}
+	    			}
 	    			if ((!xmlStrcmp(ParamS.name, (const xmlChar *)"URL"))) URL = xmlStrdup(ParamS.value);
 	    		}
 	    		sub = sub->next;
