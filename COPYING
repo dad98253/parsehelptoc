@@ -40,3 +40,4 @@ gzip <your .xml sitemap file>
 
 Note that I use frames in my web page... I know, I'm an old fart. Get over it... You will probably want to modify parsehelptoc.c to produce output compatable with however your web site will be using this data. Search parsehelptoc.c for the phrase "target=". Change these print statements to produce whatever your need is...
 
+Note #2: If you use the program to create the table of contents, it will also generate a sitemap for everything found in the toc. However, it will not check the exsitance of or time tags on those files. Run the program a second time (withe option 2 turned off) to update the lastmod fields on the previously generated sitemap file(s).
