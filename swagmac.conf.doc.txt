@@ -1,0 +1,31 @@
+﻿
+swagmab.conf file documentation:
+
+
+The file consists of one or more lines of input. Each line contains three comma separated fields and ends with a <return>. The first field is an integer that indicates an execution option. The content of the remaining two fields depends on the option. Some options cause processing (output) to take place, while others simply set input parameters. The options (lines) are processed in order. Thus, input options might need to be set before execution options. Some options can repeat. So, if you wish ot execute the same option with multiple input parameters, simply reset the input options and re-excute the execution option (make sure to use a different output file). However, option 2 dumps its output at the termination of the program. So, it can only execute once per run. After the last line is executed, the program will terminate. (If the file is empty, the program will terminate without a warning.)
+
+There are presently 4 execution options (integer numbers 1-4).
+
+option 1:
+This option is used to set additional input parameters for options 2 and 3. The second field sets the name of the sitemapindex (xml) file. The third field is the base directory name. This field tells the program where the files referenced in the help toc will be located relative to the server URL. I.e., the complete URL to a file will be <server URL (from field 2 on option 3><this field><the file location specified in the toc.hhc file>
+
+option 2:
+This option reads the (tidy) Windows html help table of contents file (toc.hcc) and transforms it into a usable html file recognizable by browsers. Primarily this involves finding the Object (and associated params) references in the toc and converting them into <A href's. The second field is the input (toc) file name and the third field is the name of the created (output) file.
+
+option 3:
+This option reads the sitemapindex file looking for sitemap files. If it finds a compressed sitemap (.gz) file, it gun-zips the file first. It them scans each sitemap (xml) file looking for file (<url>) references. When it finds one, it converts the URL reference (<loc>) to a file location based on the information provided with options 1 and 4. It then checks the last modified time tag on the file and compares it with the <lastmod> field specified in the xml file. If the file time tag is later than the <lastmod> tag, <lastmod> is updated. Note that if the input file was compressed, the resultant output file will not re-compressed. You need to take care of that yourself.
+
+
+option 4:
+This options can repeat. Each occurrence of this option is assumed to be used for a different sitemap file. The program assumes that each sitemap file is for a different directory on the web server. Thus, each option 4 line will map a sitemap file to a directory. The second field is the directory path relative to the directory that the program is executed in. If the field is empty, the files referenced by the sitemap are all assumed to be in the present default directory. If not empty, it is used to specify the relative path to the files. The third field is the name of the sitemap file. Note that if the sitemap was compressed, this name will NOT include the .gz part of the file extension. It should end with .xml .
+
+
+sample file:
+4,,passwin.xml
+4,htmlhelponhelp,passwinhelp.xml
+3,http://www.kuras-pen.net/,x
+2,tidytoc.html,helptoc.html
+1,sitemap.xml,passwin/
+
+
+
