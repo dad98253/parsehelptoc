@@ -4,6 +4,9 @@
  *  Created on: Feb 25, 2022
  *      Author: dad
  */
+#ifdef HAVE_CONFIG_H
+#include "config.h"
+#endif  // HAVE_CONFIG_H
 
 #if !defined(_BSD_SOURCE)
 #	define _BSD_SOURCE
