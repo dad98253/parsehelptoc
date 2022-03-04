@@ -1,0 +1,42 @@
+to download and build:
+
+sudo apt-get install zlib1g-dev libxml2-dev
+git clone https://github.com/dad98253/parsehelptoc.git
+cd parsehelptoc
+./configure
+make
+
+optional:
+sudo make install
+
+to test:
+1) copy your html help toc file to a file with .html extension:
+cp toc.hhc toc.html
+
+2) (probably required) clean up the html - adds optional tag close elements
+sudo apt-get tidy
+tidy -ic -asxml toc.html > tidytoc.html
+
+3) create the input option file swagmac.conf. A sample file swagmac.conf-save is provided.
+4) create the sitemapindex file sitemap.xml. A sample file sitemap.xml-save is provided. Note that parsehelptoc assumes that this file is a sitemapindex file, NOT a sitemap file. If you are not using a sitemapindex file, then create a dummy one to reference your sitemap file(s). If you don't want to use the sitemapindex file on your site, simply don't reference it in your robots.txt file (reference your sitemap files directly).
+
+5) run the program. You will probably want to do this from your root site folder (probably /var/www/html). Replace "bin" in the following with whatever the path is to the program's binanry.
+bin/parsehelptoc
+
+6) tidy up the output of the table of contents data so that you can use it in a web page. The following assumes that the output file that you specified in swagmac.conf was "helptoc.html". A sample output file named helpIndex.html-save is provided.
+tidy -icu -w 150 -ashtml helptoc.html > helpIndex.html
+
+7) double check the sitemap xml files that you created to verify that they look correct. Hint: make sure that all of your site references are fully qualified URLs. It's easy to overlook things (like trailing "/"s) in your swagmac.conf. Note that if your sitemap files were compressed, parsehelptoc will not re-compress the updated files for you. This was done on purpose: I didn't want the program to take the responsibility of producing a correct gzip file - getting this file format correct is tricky. Use the gzip utility from your distro to make sure it's done right!
+gzip <your .xml sitemap file>
+
+8) (recomemnded) Use the browser on another computer to verify that your sitemap file(s) are accessable. (I don't know about you, but I often forget to set the file permissions)
+
+9) Make sure that your robots.txt file is correct.
+
+10) Submit your sitemap you your favorite crawler(s).
+
+
+
+
+Note that I use frames in my web page... I know, I'm an old fart. Get over it... You will probably want to modify parsehelptoc.c to produce output compatable with however your web site will be using this data. Search parsehelptoc.c for the phrase "target=". Change these print statements to produce whatever your need is...
+
