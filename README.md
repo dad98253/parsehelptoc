@@ -4,11 +4,5 @@ that can be used as an index for a live web page.
 The program can also create sitemap file(s) based on the table of contents
 as well as update the lastmod lables on exsisting sitmap files.
 
-To compile on ubuntu:
-
-sudo apt-get install zlib1g-dev libxml2-dev<br>
-git clone ...<br>
-cd  parsehelptoc<br>
-./configure<br>
-make<br>
+To build, see the COPYING file.
 
