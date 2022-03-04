@@ -71,7 +71,6 @@ Setup/
 /.deps/
 /Resourcelib/.deps/
 /tutlib2/.deps/
-Makefile.in
 aclocal.m4
 /autom4te.cache/
 /bin/
@@ -91,3 +90,9 @@ loadmap.txt
 /m4/Makefile
 /build-aux/Makefile
 config.h
+helptoc.html
+passwin.xml
+passwinhelp.xml
+sitedataOut.xml
+swagmac.conf
+
