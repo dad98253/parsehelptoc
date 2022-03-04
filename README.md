@@ -6,9 +6,9 @@ as well as update the lastmod lables on exsisting sitmap files.
 
 To compile on ubuntu:
 
-sudo apt-get install zlib1g-dev libxml2-dev
-git clone ...
-cd  parsehelptoc
-./configure
-make
+sudo apt-get install zlib1g-dev libxml2-dev<br>
+git clone ...<br>
+cd  parsehelptoc<br>
+./configure<br>
+make<br>
 
