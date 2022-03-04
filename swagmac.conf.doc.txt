@@ -17,7 +17,7 @@ This option reads the sitemapindex file looking for sitemap files. If it finds a
 
 
 option 4:
-This options can repeat. Each occurrence of this option is assumed to be used for a different sitemap file. The program assumes that each sitemap file is for a different directory on the web server. Thus, each option 4 line will map a sitemap file to a directory. The second field is the directory path relative to the directory that the program is executed in. If the field is empty, the files referenced by the sitemap are all assumed to be in the present default directory. If not empty, it is used to specify the relative path to the files. The third field is the name of the sitemap file. Note that if the sitemap was compressed, this name will NOT include the .gz part of the file extension. It should end with .xml .
+This option can repeat. Each occurrence of this option is assumed to be used for a different sitemap file. The program assumes that each sitemap file is for a different directory on the web server. Thus, each option 4 line will map a sitemap file to a directory. The second field is the directory path relative to the directory that the program is executed in. If the field is empty, the files referenced by the sitemap are all assumed to be in the present default directory. If not empty, it is used to specify the relative path to the files. The third field is the name of the sitemap file. Note that if the sitemap was compressed, this name will NOT include the .gz part of the file extension. It should end with .xml . 
 
 
 sample file:
