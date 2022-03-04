@@ -73,8 +73,10 @@ Setup/
 /tutlib2/.deps/
 aclocal.m4
 /autom4te.cache/
-/bin/
+/bin/*
+!/bin/NEWS
 /lib/
+/html/
 config.log
 config.status
 configure
