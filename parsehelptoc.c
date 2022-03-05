@@ -233,8 +233,10 @@ int hangitup = 0;
 int mongoInitCalled = 0;
 bool error;
 char *servername = NULL;
-char *defchangefreq = "monthly";
-char *defpriority = "0.5";
+char *defchangefreqcs = "monthly";
+char *defprioritycs = "0.5";
+char *defchangefreq;
+char *defpriority;
 char *urldirname[NUMSITE] = {NULL};
 char *sitemapfilename[NUMSITE] = {NULL};
 char *basefqdn = NULL;
@@ -250,6 +252,7 @@ int main(int argc, char* argv[])
 	int second = 0;
 	int third = 0;
 	int fourth = 0;
+	int fifth = 0;
 	char *filename;
 	char *outfilename;
 	char *defconffile = "swagmac.conf";
@@ -268,14 +271,18 @@ int main(int argc, char* argv[])
 		if ((strcmp(argv[2], "all") == 0) | (strcmp(argv[2], "second") == 0)) second = 1;
 		if ((strcmp(argv[2], "all") == 0) | (strcmp(argv[2], "third") == 0)) third = 1;
 		if ((strcmp(argv[2], "all") == 0) | (strcmp(argv[2], "fourth") == 0)) fourth = 1;
+		if ((strcmp(argv[2], "all") == 0) | (strcmp(argv[2], "fifth") == 0)) fifth = 1;
 	}
 	else {
 		first = 1;
 		second = 1;
 		third = 1;
 		fourth = 1;
+		fifth = 1;
 	}
 
+	defchangefreq = defchangefreqcs;
+	defpriority = defprioritycs;
 	line = (char*)calloc(1,size);
 	sitedb = (SiteMapDbStructure*)calloc(1,sizeof(SiteMapDbStructure)*NUMSITE);
 	HelpSdb = (helpStructure*)calloc(1,sizeof(helpStructure)*NUMURL);
@@ -316,9 +323,6 @@ int main(int argc, char* argv[])
 		{
 			case 1:
 				if (first) {
-//				line = (char*)malloc(size);
-//					urldb = (UrlDbStructure*)malloc(sizeof(UrlDbStructure)*NUMURL);
-//					sitedb = (SiteMapDbStructure*)malloc(sizeof(SiteMapDbStructure)*NUMSITE);
 					// save the basefqdn in case it is needed during the helpuri to sitemap step
 		    		if (!outfilename) {
 		    			basefqdn = (char*)malloc(1);
@@ -342,20 +346,6 @@ int main(int argc, char* argv[])
 				break;
 
 		    case 2:
-
-		/*
-		<?xml version="1.0" encoding="UTF-8"?>
-		<!DOCTYPE nmaprun>
-		<host><status state="up" reason="arp-response" reason_ttl="0"/>
-		<address addr="10.0.0.1" addrtype="ipv4"/>
-		<address addr="5C:F4:AB:6D:F4:FB" addrtype="mac" vendor="ZyXEL Communications"/>
-		<hostnames>
-		<hostname name="_gateway" type="PTR"/>
-		</hostnames>
-		<times srtt="700" rttvar="5000" to="100000"/>
-		</host>
-	*/
-
 				if (second) {
 					xmlDocPtr doc;
 					xmlNodePtr cur;
@@ -436,7 +426,22 @@ int main(int argc, char* argv[])
 				break;
 
 		    case 5:
-
+		    	if (fifth) {
+		    		if (!filename) {
+		    			defchangefreq = (char*)malloc(1);
+		    			*defchangefreq = '\000';
+		    		} else {
+		    			defchangefreq = (char*)malloc(strlen(filename)+1);
+						strcpy(defchangefreq, filename);
+		    		}
+		    		if (!outfilename) {
+		    			defpriority = (char*)malloc(1);
+		    			*defpriority = '\000';
+		    		} else {
+		    			defpriority = (char*)malloc(strlen(outfilename)+1);
+						strcpy(defpriority, outfilename);
+		    		}
+		    	}
 				break;
 
 		    case 6:
@@ -1387,7 +1392,7 @@ ParamStructure * parseparam (xmlDocPtr doc, xmlNodePtr cur, int *numnew, FILE *f
  */
 static int GetDigits(const char *zDate, const char *zFormat, ...){
     /* The aMx[] array translates the 3rd character of each format
-     ** spec into a max size:    a   b   c   d   e     f */
+     ** spec into a max size:        a   b   c   d   e     f */
     static const uint16_t aMx[] = { 12, 14, 24, 31, 59, 9999 };
     va_list ap;
     int cnt = 0;
